@@ -27,3 +27,11 @@ function print(value) {
 
 print();  // 파라미터로 아무 값도 전달하지 않아서 value 를 falsy한 값으로 만들어서 'Codeit'을 출력하게 한다. 
 print('JavaScript');  // 파라미터로 값을 전달해서 value를 truthy한 값으로 만들어서 파라미터로 전달한 값을 출력하게 한다. 
+
+
+// null 병합 연산자: 물음표 두 개(??)를 사용해서 null 혹은 undefined 값을 가려내는 연산자이다. 
+const example = null ?? 'I';  // '??' 왼쪽에 null이 있으면 오른쪽 값이 리턴된다. -> I
+const example = undefined ?? 'love';  // '??' 왼쪽에 undefined이 있으면 오른쪽 값이 리턴된다. -> love
+const example = 'Codeit' ?? 'JavaScript';  // '??' 왼쪽에 null 또는 undefined 가 없으면 왼쪽 값이 리턴된다. -> Codeit
+
+console.log(example1, example2, example3);  // I love Codeit

@@ -25,3 +25,15 @@ const macbook = {  // 객체
   storage: '1TB SSD 저장 장치',
   display: '16향 Retina 디스플레이',
 };
+
+// const title = macbook.title;
+// const price = macbook.price;
+// 위의 두 줄의 코드를 destructuring 문법을 이용하면 아래의 한 줄의 코드로 표현 가능하다. 
+const { title, price } = macbook;
+
+console.log(title); // 맥북 프로 16형
+console.log(price); // 3690000
+
+const { title, color } = macbook;
+console.log(title); // 맥북 프로 16형
+console.log(color); // undefined  ->  객체에 없는 프로퍼티네임은 undefined 가 출력된다. 

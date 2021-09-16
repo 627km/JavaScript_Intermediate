@@ -37,3 +37,14 @@ console.log(price); // 3690000
 const { title, color } = macbook;
 console.log(title); // 맥북 프로 16형
 console.log(color); // undefined  ->  객체에 없는 프로퍼티네임은 undefined 가 출력된다. 
+
+// 함수와 적용하기
+function getArray() {
+  return ['컴퓨터', '냉장고', '세탁기'];
+}
+
+const [el1, el2, el3] = getArray();
+
+console.log(el1); // 컴퓨터
+console.log(el2); // 냉장고
+console.log(el3); // 세탁기

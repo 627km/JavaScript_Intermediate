@@ -15,3 +15,11 @@ const everyReturn = numbers.every((el) => el > 5);
 
 console.log('some:', someReturn);  // some: true
 console.log('every:', everyReturn);  // every: false 
+
+// reduce
+const number = [1, 2, 3, 4];
+
+number.reduce((acc, el, i, arr) => {
+  return nextAccValue;
+}, initialAccValue);  
+// acc (accumulator: 누산기)

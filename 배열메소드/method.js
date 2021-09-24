@@ -1,5 +1,25 @@
 // forEach와 map 
+/**
+ * forEach
+ *: 배열의 요소를 하나씩 살펴보면서 반복 작업을 하는 메소드이다.
+ */
+const numbers = [1, 2, 3];
 
+numbers.forEach((element, index, array) => {    // index 와 array는 생략가능
+  console.log(element); // 순서대로 콘솔에 1, 2, 3이 한 줄씩 출력됨.
+});
+
+/**
+ * map
+ *: forEach와 비슷하게 배열의 요소를 하나씩 살펴보면서 반복작업을 하는 메소드이다. 단, 첫번째 아규먼트로 전달하는 콜백함수가 매번 리턴하는 값들을 모아서 새로운 배열을 만들어 리턴하는 특징이 있다.
+ */
+
+const numbers = [1, 2, 3];
+const twiceNumbers = numbers.map((element, index, array) => {
+  return element * 2;
+});
+
+console.log(twiceNumbers); // (3) [2, 4, 6]
 
 // filter와 find 
 // filter -> 조건에 맞는 값을 모두 찾아서 배열의 형태로 리턴

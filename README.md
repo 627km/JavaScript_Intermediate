@@ -1,6 +1,5 @@
-# JavaScript 중급 - 여러 심화 문법
+# JavaScript 중급
 
-interactive JavaScript
-modern JavaScript
-
-- 파일 수정 
+- ## Interactive JavaScript
+- ## Modern JavaScript
+- ## Object-Oriented Programing

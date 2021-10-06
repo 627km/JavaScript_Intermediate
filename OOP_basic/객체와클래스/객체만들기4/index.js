@@ -1,5 +1,5 @@
 // 클래스 (class)
-// 보통 클래스에서는 constructor 안에 프로퍼티를 , 그 밖에 메소드를 정의한다. 
+// 보통 클래스에서는 constructor 안에 프로퍼티를 정의하고 메소드는 그 밖에다 정의한다. 
 class User {  
   constructor(email, birthdate) { // constructor (생성자 메소드)
     this.email = email;  // this (생성되는 객체를 가리킴)

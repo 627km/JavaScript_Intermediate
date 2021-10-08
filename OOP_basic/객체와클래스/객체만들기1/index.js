@@ -1,3 +1,5 @@
+// 객체만들기
+
 const user = {
   email: 'rudals_jeon@naver.com', // 객체의 상태를 나타내는 변수 : 프로퍼티
   birthdate: '1998-06-27',  // 객체의 상태를 나타내는 변수 : 프로퍼티

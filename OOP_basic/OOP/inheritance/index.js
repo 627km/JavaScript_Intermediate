@@ -26,4 +26,3 @@ class PremiumUser extends User {  // extends User -> User class 를 상속한다
     console.log(`Free music streaming for ${this.email}`);
   }
 }
-

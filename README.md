@@ -1,6 +1,6 @@
 # JavaScript_Intermediate
 
-> * [InteractiveJS](http://github/627km/Javascript_intermediate/tree/main/interactiveJS) 
-> * [ModernJavaScript](http://github/627km/Javascript_intermediate/tree/main/modernJavaScript)
+> * [InteractiveJS](http://github.com/627km/Javascript_intermediate/tree/main/interactiveJS) 
+> * [ModernJavaScript](http://github.com/627km/Javascript_intermediate/tree/main/modernJavaScript)
 > * 
 

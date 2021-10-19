@@ -1,5 +1,5 @@
 # JavaScript_Intermediate
 
-> * [browserJS](http://github.com/627km/tree/main/JavaScript_Intermediate/tree/main/browserJS)
+> * [browserJS](http://github.com/627km/JavaScript_Intermediate/tree/main/InteractiveJS/tree/main/browserJS)
 > * 
 

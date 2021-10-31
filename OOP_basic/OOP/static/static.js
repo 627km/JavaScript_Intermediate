@@ -12,4 +12,4 @@ class Math {
 console.log(Math.PI); // 3.14
 console.log(Math.getCircleArea(5)); // 78.5 
 
-Math.PI = 3.141592; // class 밖에서 값을 수정할 수있다. 
+Math.PI = 3.141592; // class 밖에서 값을 수정할 수있다.

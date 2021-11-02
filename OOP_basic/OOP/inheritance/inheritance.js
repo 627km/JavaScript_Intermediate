@@ -19,10 +19,9 @@ class PremiumUser extends User {  // extends User -> User class에 있는 email,
     this.level = level;
   }
 // 상속받은 User class 와 겹치는 부분은 입력하지 않아도 된다.
-//  buy(item) {
+//  buy(item) {   <-- 생략
 //    console.log(`${this.email} buys ${item.name}`);
 //  }
-
   streamMusicForFree() {
     console.log(`Free music streaming for ${this.email}`);
   }

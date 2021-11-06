@@ -3,6 +3,11 @@ fetch('https://www.google.com')
   .then((response) => response.text())
   .then((result) => { console.log(result); });
 
+  /** fetch 함수의 실행 원리
+ * 1. fetch 함수는 어떤 객체를 리턴하는(Promise 객체)
+ * 2. 이 객체의 then 메소드로, '리스폰스가 왔을 때 실행할 콜백'을 등록할 수 있다.
+ * 3. 이렇게 등록된 콜백들은 then메소드로 등록한 순서대로 실행되고, 이때 이전 콜백의 리턴값을 이후 콜백이 넘겨받아서 사용할 수 있다. 
+ */
 
 // Arrow function - function 키워드를 보다 간결하게 표현하고자 나온 문법
 // function 키워드를 지워주고 소괄호() 오른편에서 등호와 부등호로 화살표 기호(=>) 를 추가한다. 

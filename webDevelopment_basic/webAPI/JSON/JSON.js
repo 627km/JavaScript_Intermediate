@@ -6,6 +6,9 @@
  * 4. JSON에서는 주석을 추가할 수 없다. (코드가 아니라 데이터 포맷이기 때문에 그 안에 주석을 포함시킬 수 없다. )
  */
 
+// JS -> string type JSON : Serialization (직렬화)
+// string type JSON -> JS : Deserialization (역직렬화)
+
 // JS
 const member = {
   name: 'Michael Kim',

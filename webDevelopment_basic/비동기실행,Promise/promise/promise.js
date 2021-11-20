@@ -28,5 +28,39 @@ Deserialize해서 생겨난 객체를 '작업 성공 결과'로 가진 promise �
 promise 객체는 rejected 상태가 되면서 그 '작업 실패 정보'를 갖게 된다.
 */
 
-// Promise 체이닝이 필요한 경우 
-// 비동기실행을 순차적으로 실행해야 할 때 
+/* 
+Promise 체이닝이 필요한 경우 
+: 비동기실행을 순차적으로 실행해야 할 때 -> 전체 코드를 좀 더 깔끔하게 나타낼 때.
+*/
+console.log('Start!');
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response) => response.text())
+  .then((result) => {
+    const users =JSON.parse (result);
+    const { id } =user[0];
+    fetch(`https://jsonplaceholder.typicode.com/userId=${id}`)
+      .then((response) => response.text())
+      .then((posts) => {
+        console.log(posts);
+      });
+  });
+
+console.log('End');
+
+// 이렇게 코드를 써도 똑같은 결과가 출력된다. 
+console.log('Start!');
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response) => response.text())
+  .then((result) => {
+    const users =JSON.parse (result);
+    const { id } =user[0];
+    return fetch(`https://jsonplaceholder.typicode.com/userId=${id}`);
+  })
+  .then((response) => response.text())
+  .then((posts) => {
+    console.log(posts);
+  });
+
+console.log('End');

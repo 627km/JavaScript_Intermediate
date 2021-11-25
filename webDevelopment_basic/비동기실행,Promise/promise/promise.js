@@ -80,3 +80,51 @@ const p1 = new Promise((resolve, reject) => {
 }); 
   
 p1.catch((error) => { console.log(error); });  // 2초 후에 fail 이라는 문자가 출력된다. 
+
+
+// 이미 상태가 결정된 Promise 객체 만들기
+// 1. fulfilled 상태의 Promise 객체 만들기 
+const p = Promise.resolve('success'); // Promise의 resolve라는 메소드를 사용하면 바로 fulfilled 상태의 Promise 객체를 만들 수 있다. 
+
+// 2. rejected 상태의 Promise 객체 만들기 
+const p = Promise.rejected(new Error('fail')); // Promise의 rejected라는 메소드를 사용하면 바로 rejected 상태의 Promise 객체를 만들 수 있다. 
+
+// 여러 Promise 객체를 다루는 방법
+
+/*  1. all 메소드 */
+// 1번 직원 정보
+const p1 = fetch('https://learn.codeit.kr/api/members/1').then((res) => res.json());  // deserialize
+// 2번 직원 정보
+const p2 = fetch('https://learn.codeit.kr/api/members/2').then((res) => res.json());  // deserialize
+// 3번 직원 정보
+const p3 = fetch('https://learn.codeit.kr/api/members/3').then((res) => res.json());  // deserialize
+
+Promise
+  .all([p1, p2, p3])  // 배열 안에 있는 모든 Promise 객체가 pending 상태에서 fulfilled 상태가 될 때까지 기다린다. 
+  // 그리고 모든 Promise 객체들이 fulfilled 상태가 되면 all 메소드가 리턴했던 Promise 객체는 fulfilled 상태가 되고, 각 Promise 객체의 작업 성공 결과들로 이루어진 배열을, 그 작업 성공 결과로 갖게된다.  
+  .then((results) => {
+    console.log(results); // Array : [1번 직원 정보, 2번 직원 정보, 3번 직원 정보]
+  });
+  // 3개의 Promise 객체 중 하나라도 rejected 상태가 되면, all 메소드가 리턴한 Promise 객체는 rejected 상태가 되고 동일한 작업 실패 정보를 갖게 된다. 
+  // 이렇게 all 메소드는 하나의 Promise 객체라도 rejected 상태가 되면, 전체 작업이 실패한 것으로 간주해야 할 때 사용이된다. 
+
+  /* 2. race 메소드 */
+  // race 메소드가 리턴한 Promise 객체는 아규먼트로 들어온 배열의 여러 Promise 객체들 중에서 가장 먼저 fulfilled 상태 또는 rejected 상태가 된 Promise 객체와 동일한 결과를 갖게 된다. 
+  const p1 = new Promise((resolve, reject) => {  // 가장 먼저 fulfilled 상태가 된다. 
+    setTimeout(() => resolve('Success'), 1000);
+  });
+  const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error('fail')), 2000);
+  });
+  const p3 = new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error('fail2')), 4000);
+  });
+  
+  Promise
+    .race([p1, p2, p3])
+    .then((result) => {
+      console.log(result); // hello 출력
+    })
+    .catch((value) => {
+      console.log(value);
+    });

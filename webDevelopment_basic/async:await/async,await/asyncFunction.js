@@ -62,3 +62,24 @@ getUsers().then((result) => { console.log(result); });  // 민감정보(주소, 
   (3-2) arrow function(축약)
   const example3_2 = async (a, b) => a + b;
 */
+
+
+// async 함수의 내부 코드를 작성할 때 주의할 점
+// 1. 순서대로 작동하는 코드 
+async function getResponses(urls) {
+  for(const url of urls){
+    const response = await fetch(url);
+    console.log(await response.text());
+  }
+}
+// 위의 코드는 순차적으로 작동하는 코드이기 때문에 순서가 상관없는 경우라면 성능관점에서 아쉬운 점이 있다.
+
+// 2. 순서가 중요하지않는 코드
+async function fetchUrls(urls) {
+  for(const url of urls){
+    (async () => {  // 추가된 부분
+      const response = await fetch(url);
+      console.log(await response.text());
+    })(); // 추가된 부분 
+  }
+}

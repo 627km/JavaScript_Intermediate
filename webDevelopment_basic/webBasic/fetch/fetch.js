@@ -1,7 +1,7 @@
 // fetch: 서버에 request(요청)을 보내고 response(응답)를 받는 함수.
-fetch('https://www.google.com')  
-  .then((response) => response.text())
-  .then((result) => { console.log(result); });
+fetch('https://www.google.com') // 파라미터에 있는 url로 request를 보낸다. 
+  .then((response) => response.text())  // then : 콜백을 등록해주는 메소드 
+  .then((result) => { console.log(result); }); // result 라는 파라미터로 이전 콜백의 리턴값인 response.text()가 전달된다. 
 
   /** fetch 함수의 실행 원리
  * 1. fetch 함수는 어떤 객체를 리턴하는(Promise 객체)

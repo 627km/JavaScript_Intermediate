@@ -8,7 +8,7 @@
  */
 
 /**
- * Request
+ * Request (하나의 request는 head와 body로 구성된다.)
  * - Head : request에 대한 부가 정보를 담고 있음 (method)
- * - body : 실제 데이터를 담는 부분 (get, delete 메소드는 body가 업다.)
+ * - body : 실제 데이터를 담는 부분 (get(조회), delete(삭제) 메소드는 body가 없다.)
  */

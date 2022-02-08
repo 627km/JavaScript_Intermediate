@@ -6,7 +6,7 @@
  *  */ 
 
 /**
- * Rest API
+ * Rest API (개발자 면접질문으로 자주 등장)
  * : 오늘날 많은 웹 개발자들이 Web API 설계할 때, 준수하기 위해 노력하는 일종의 가이드라인이다.
  * 
  * REST Architecture

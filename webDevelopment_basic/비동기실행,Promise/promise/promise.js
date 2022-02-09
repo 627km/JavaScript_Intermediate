@@ -8,8 +8,8 @@ console.log('End');
 
 // Promise (작업에 관한 상태정보)
 // pending : 진행 중
-// fuliflled : 성공 
-// rejected : 실패  
+// fuliflled : 성공(request를 보내고 response를 정상적으로 받았을 때) (-> 작업성공결과를 갖는다.)
+// rejected : 실패  (-> 작업실패정보를 갖는다.)
 
 // then메소드: promise객체가 fulfilled 상태가 되었을 때 실행할 콜백을 등록하는 메소드 
 // then 메소드가 새로운 promise객체를 리턴한다. 

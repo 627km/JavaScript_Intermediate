@@ -57,12 +57,12 @@ console.log('End');
 // 이렇게 코드를 써도 똑같은 결과가 출력된다. 
 console.log('Start!');
 
-fetch('https://jsonplaceholder.typicode.com/users')
+fetch('https://jsonplaceholder.typicode.com/users')  // 전체사용자 정보를 조회하기위해 request를 보낸다. 
   .then((response) => response.text())
   .then((result) => {
     const users =JSON.parse (result);
-    const { id } =user[0];
-    return fetch(`https://jsonplaceholder.typicode.com/userId=${id}`);
+    const { id } = users[0];  // 첫 번째 사용자의 id를 구해서 
+    return fetch(`https://jsonplaceholder.typicode.com/userId=${id}`); //해당 사용자가 작성한 글 목록을 조회해서 출력
   })
   .then((response) => response.text())
   .then((posts) => {

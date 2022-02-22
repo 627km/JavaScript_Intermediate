@@ -22,6 +22,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
     throw new Error('test');  // 이렇게 catch 메소드 뒤에 발생하는 error는 잡아내지 못한다. 
   })
 
+// catch 메소드를 맨 마지막에 적어준 경우 
 fetch('https://jsonplaceholder.typicode.com/users')
   .then((response) => response.text())
   .then((result) => { 

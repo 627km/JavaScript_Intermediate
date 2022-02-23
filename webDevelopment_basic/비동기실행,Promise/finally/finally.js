@@ -6,5 +6,5 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log(error);
     throw new Error('from catch method');
   })
-  .finally(() => { console.log('exit'); } ); // 보통 catch 메소드 뒤에 적는다. 
+  .finally(() => { console.log('exit'); } ); // finally 메소드는 보통 catch 메소드 뒤에 적는다. 
 // Error가 발생하더라도 finally 메소드는 실행이 된다. 

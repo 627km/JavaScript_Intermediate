@@ -74,15 +74,14 @@ console.log('End');
 // Promise 객체 만들기 
 const p = new Promise((resolve, reject) => {
 // new promise -> 이 부분이 promise 객체를 만드는부분
-// (resolve, reject) => {} -> executor 함수
+// '(resolve, reject) => {}' -> executor 함수
   setTimeout(() => { resolve('success'); }, 2000);  // resolve : promise 객체를 fulfilled 상태로 만든다. 
 }); 
 
-// Promise 객체 만들기 
-p.then((result) => { console.log(result); });  // 2초 후에 success 라는 문자가 출력된다. 
+p.then((result) => { console.log(result); });  // 2초 후에 'success' 라는 문자가 출력된다. 
 
 const p1 = new Promise((resolve, reject) => {
-  setTimeout(() => { reject(new Error('fail')); }, 2000);
+  setTimeout(() => { reject(new Error('fail')); }, 2000);  // reject 함수는 생성되는 promise 객체를 rejected 상태로 만든다.
 }); 
   
 p1.catch((error) => { console.log(error); });  // 2초 후에 fail 이라는 문자가 출력된다. 

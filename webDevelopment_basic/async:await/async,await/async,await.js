@@ -15,7 +15,7 @@ async function fetchAndPrint() {  // fetchAndPrint 라는 함수를 만든다.
   console.log(result);
 }  
 
-fetchAndPrint();
+fetchAndPrint();  // 마지막에서 함수를 실행
 
 // 3. 다른 코드들과 같이 있을 때 async 함수의 비동기실행
 async function fetchAndPrint() {  // fetchAndPrint 라는 함수를 만든다. 
@@ -64,6 +64,10 @@ async function fetchAndPrint() {
   return fetch('https://jsonplaceholder.typicode.com/uers')
           .then((response) => response.text());
 }
+
+fetchAndPrint();
+// return 된 promise 객체와 동일한 상태, 동일한 작업성공결과를 가진 promise객체가 return 되었다. 
+// 그냥 then메소드가 return 한 promise 객체를 그대로 return 했다고 봐도 무방
 
 /*
 async 함수 안에서 리턴하는 값의 종류에 따라 어떤 Promise 객체를 리턴하게 되는가

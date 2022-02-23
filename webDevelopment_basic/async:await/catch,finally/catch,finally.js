@@ -19,9 +19,9 @@ fetchAndPrint();
 // 3. rejected 상태를 대비해 try catch 문 사용
 async function fetchAndPrint() {
   try {
-  const response = await fetch('https://jsonplaceholder.typicode.comm/users');
-  const result = await response.text();
-  console.log(result);
+    const response = await fetch('https://jsonplaceholder.typicode.comm/users');
+    const result = await response.text();
+    console.log(result);
   } catch (error) {
     console.log(error);
   }  // try문에서 error가 발생하면 catch문으로 흐름이 넘어간다. 
